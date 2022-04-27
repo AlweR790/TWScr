@@ -5,7 +5,7 @@ function GetVillageName(id) {
 
 var nameSaveButtons = new Array();
 var savedCounter = 0;
-var numberOfTheBeast = 666; /* ms */
+var numberOfTheBeast = 100; /* ms */
 var saveDelay = numberOfTheBeast;
 renameVillages();
 
