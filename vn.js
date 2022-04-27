@@ -22,7 +22,7 @@ function renameVillages() {
 				$(village).find('.rename-icon').click();
 				$(village).find('input[type=text]').val(name);
 				var nameSaveButton = $(village).find('input[type=button]');
-				nameSaveButtons.push(nameSaveButton);
+				nameSaveButtons.unshift(nameSaveButton);
 			} else {
 				UI.InfoMessage('Název je příliš dlouhý (max. 32 znaků).<br/>Nový název nebude aplikován na všechny vesnice.', 5000, 'error');
 			}
