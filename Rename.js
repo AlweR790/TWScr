@@ -205,6 +205,13 @@ twcheese.createNamerGUI = function()
 				defaultLabel:' Vlastní text ',
 				example:'',
 				enabled: false
+			},
+			{
+				name: 'random_coord',
+				description: 'Random souřadnice',
+				defaultLabel: 'Random souřadnice  ',
+				example: '',
+				enabled: false
 			}
 		];
 		for(var i=0; i<options.length; i++)
@@ -596,6 +603,14 @@ twcheese.createNamerGUI = function()
 						
 						name += directionNames[yLocation][xLocation];
 					}
+					if (config[j].name == 'random_coord') {
+						name += "(";
+						name += getRndInteger(300, 700);
+						name += "|";
+						anme += getRndInteger(300, 700);
+
+						name += directionNames[yLocation][xLocation];
+					}
 				}
 			}			
 			
@@ -627,6 +642,9 @@ var nameSaveButtons = new Array();
 var savedCounter = 0;
 var numberOfTheBeast = 100; /* ms */
 var saveDelay = numberOfTheBeast;
+function getRndInteger(min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
+}
 function saveVillageNames(){
 	if(nameSaveButtons.length > 0){
 		window.setTimeout(
