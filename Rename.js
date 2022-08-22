@@ -54,7 +54,7 @@ twcheese.createNamerGUI = function()
 		titleBar.insertRow(-1);
 		titleBar.rows[0].insertCell(-1);
 		titleBar.rows[0].insertCell(-1);
-		titleBar.rows[0].cells[0].innerHTML = '<b>JmĂ©no vesnice</b> (max 32 znakĹŻ) - Fixed by LilGhost';
+		titleBar.rows[0].cells[0].innerHTML = '<b>Jméno vesnice</b> (max 32 znaků) - Fixed by LilGhost';
 		titleBar.rows[0].cells[0].width = '100%';
 		titleBar.rows[0].cells[1].innerHTML = '<img src="graphic/delete.png" alt="X"/>';
 		titleBar.rows[0].cells[1].style.cursor="pointer";
@@ -129,7 +129,7 @@ twcheese.createNamerGUI = function()
 			}
 			
 			if (alertUser) {
-				alert('Aktualizace! Byla pĹ™idĂˇna novĂˇ moĹľnost pĹ™ejmenovĂˇnĂ­:\n\n"Direction"\noznaÄŤuje zemÄ›pisnĂ© umĂ­stÄ›nĂ­ vesnice na jejĂ­m kontinentu');
+				alert('Aktualizace! Byla přidána nová možnost přejmenování:\n\n"Direction"\noznačuje zeměpisné umístění vesnice na jejím kontinentu');
 				localStorage.setItem('twcheese_nameVillages_lastUpdateMessage', '1');
 			}
 		}		
@@ -143,7 +143,7 @@ twcheese.createNamerGUI = function()
 		var options = [
 			{
 				name:'number_villages',
-				description:'Vesnice v ÄŤĂ­selnĂ© Ĺ™adÄ›',
+				description:'Vesnice v číselné řadě',
 				defaultLabel:'0',
 				startNum:'0',
 				digits:'4',
@@ -159,50 +159,50 @@ twcheese.createNamerGUI = function()
 			},
 			{
 				name:'insert_text0',
-				description:'VlastnĂ­ text',
-				defaultLabel:' VlastnĂ­ text ',
+				description:'Vlastní text',
+				defaultLabel:' Vlastní text ',
 				example:'',
 				enabled: true
 			},	
 			{
 				name:'distance',
-				description:'VzdĂˇlenost od vesnice (do pole vlevo zadejte souĹ™adnice)',
+				description:'Vzdálenost od vesnice (do pole vlevo zadejte souřadnice)',
 				defaultLabel:'500|500',
 				example:'13.37',
 				enabled: true
 			},
 			{
 				name:'sector',
-				description:'kontinent:sektor:pole <img id="twcheese_sector_help" src="http://cdn.tribalwars.net/graphic/questionmark.png" style="width: 13px; height: 13px" title="Mapa je rozdÄ›lena zleva doprava, shora dolĹŻ.<br/>SvÄ›t - 100 kontinentĹŻ (10x10)<br/>Kontinent - 400 sektorĹŻ (20x20)<br/>Sektor - 25 polĂ­ (5x5)">',
+				description:'kontinent:sektor:pole <img id="twcheese_sector_help" src="http://cdn.tribalwars.net/graphic/questionmark.png" style="width: 13px; height: 13px" title="Mapa je rozdělena zleva doprava, shora dolů.<br/>Svět - 100 kontinentů (10x10)<br/>Kontinent - 400 sektorů (20x20)<br/>Sektor - 25 polí (5x5)">',
 				defaultLabel:' ',
 				example:'55:12:20',
 				enabled: false
 			},
 			{
 				name:'direction',
-				description:'ZemÄ›pisnĂ© umĂ­stÄ›nĂ­ na kontinentu',
+				description:'Zeměpisné umístění na kontinentu',
 				defaultLabel:' ',
 				example:'SV',
 				enabled: false
 			},
 			{
 				name:'random_text',
-				description:'NĂˇhodnĂ© jmĂ©no',
+				description:'Náhodné jméno',
 				defaultLabel:' ',
-				example:'NĂˇhodnĂ© jmĂ©no',
+				example:'Náhodné jméno',
 				enabled: false
 			},			
 			{
 				name:'insert_text1',
-				description:'VlastnĂ­ text',
-				defaultLabel:' VlastnĂ­ text ',
+				description:'Vlastní text',
+				defaultLabel:' Vlastní text ',
 				example:'',
 				enabled: false
 			},
 			{
 				name:'insert_text2',
 				description:'Vlastni text',
-				defaultLabel:' VlastnĂ­ text ',
+				defaultLabel:' Vlastní text ',
 				example:'',
 				enabled: false
 			}
@@ -264,7 +264,7 @@ twcheese.createNamerGUI = function()
 		
 		localStorage.setItem('twcheese.nameVillagesConfig',JSON.stringify(this.config));
 		localStorage.setItem('twcheese_nameVillagesMode',mode);
-		UI.InfoMessage('NastavenĂ­ uloĹľeno.',3000,'success');
+		UI.InfoMessage('Nastavení uloženo.',3000,'success');
 	};
 	
 	content.getConfig = function()
@@ -297,7 +297,7 @@ twcheese.createNamerGUI = function()
 	{
 		if(document.getElementById('twcheese_name_preview').innerHTML.length >= 31)
 		{
-			UI.InfoMessage('NĂˇzvy jsou pĹ™Ă­liĹˇ dlouhĂ©! (max 32 znakĹŻ).',5000,'error');
+			UI.InfoMessage('Názvy jsou příliš dlouhé! (max 32 znaků).',5000,'error');
 		}				
 		else
 		{
@@ -312,7 +312,7 @@ twcheese.createNamerGUI = function()
 		var preview = document.createElement('span');
 		preview.id = 'twcheese_name_preview';
 		preview.innerHTML = 'blahblahblah';
-		content.innerHTML = '<b>&nbsp;NĂˇhled nĂˇzvu: </b>';
+		content.innerHTML = '<b>&nbsp;Náhled názvu: </b>';
 		content.appendChild(preview);
 		
 		
@@ -351,7 +351,7 @@ twcheese.createNamerGUI = function()
 				
 				numberingInputTable.rows[0].cells[0].innerHTML = 'Start #';
 				numberingInputTable.rows[0].cells[0].style.width = '80px';
-				numberingInputTable.rows[0].cells[1].innerHTML = 'ÄŚĂ­slice';
+				numberingInputTable.rows[0].cells[1].innerHTML = 'Číslice';
 				
 				var startNumInput = document.createElement('input');
 				startNumInput.type = 'text';
@@ -418,7 +418,7 @@ twcheese.createNamerGUI = function()
 			overwriteButton.value = 'overwrite';			
 			overwriteButton.style.marginLeft = '20px';
 			modeForm.appendChild(overwriteButton);			
-			modeForm.innerHTML += 'PĹ™epsat aktuĂˇlnĂ­ nĂˇzvy';
+			modeForm.innerHTML += 'Přepsat aktuální názvy';
 			
 			/*==== prepend ====*/
 			prependButton = document.createElement('input');
@@ -428,7 +428,7 @@ twcheese.createNamerGUI = function()
 			prependButton.value = 'prepend';
 			prependButton.style.marginLeft = '20px';
 			modeForm.appendChild(prependButton);
-			modeForm.innerHTML += 'PĹ™idat pred souÄŤasnĂ˝ nĂˇzev';			
+			modeForm.innerHTML += 'Přidat pred současný název';			
 			
 			/*==== append ====*/
 			appendButton = document.createElement('input');
@@ -438,7 +438,7 @@ twcheese.createNamerGUI = function()
 			appendButton.value = 'append';
 			appendButton.style.marginLeft = '20px';
 			modeForm.appendChild(appendButton);
-			modeForm.innerHTML += 'PĹ™idat za souÄŤasnĂ˝ nĂˇzev';
+			modeForm.innerHTML += 'Přidat za současný název';
 		
 		content.appendChild(modeForm);
 		
@@ -451,13 +451,13 @@ twcheese.createNamerGUI = function()
 			/*==== save button ====*/
 			var saveButton = document.createElement('button');
 			saveButton.onclick = function(){content.saveConfig();};
-			saveButton.innerHTML = 'Nastavit jako vĂ˝chozĂ­';
+			saveButton.innerHTML = 'Nastavit jako výchozí';
 			buttonDiv.appendChild(saveButton);
 			
 			/*==== confirm button ====*/
 			var confirmButton = document.createElement('a');
 			confirmButton.className = 'btn-default btn-green';
-			confirmButton.innerHTML = 'HromadnÄ› pĹ™ejmenovat';
+			confirmButton.innerHTML = 'Hromadně přejmenovat';
 			confirmButton.onclick = function()
 			{
 				document.getElementById('twcheese_name_config').nameVillages();				
@@ -612,7 +612,7 @@ twcheese.createNamerGUI = function()
 				var nameSaveButton = $(village).find('input[type=button]');
 				nameSaveButtons.unshift(nameSaveButton);
 			}else{
-				UI.InfoMessage('NĂˇzev je pĹ™Ă­liĹˇ dlouhĂ˝ (max. 32 znakĹŻ).<br/>NovĂ˝ nĂˇzev nebude aplikovĂˇn na vĹˇechny vesnice.',5000,'error');
+				UI.InfoMessage('Název je příliš dlouhý (max. 32 znaků).<br/>Nový název nebude aplikován na všechny vesnice.',5000,'error');
 			}
 		
 		});
@@ -636,16 +636,16 @@ function saveVillageNames(){
 				savedCounter++;
 				
 				if(nameSaveButtons.length > 0){
-					UI.InfoMessage( ('PĹ™ejmenovanĂ© vesnice #'+savedCounter),5000,'success');
+					UI.InfoMessage( ('Přejmenované vesnice #'+savedCounter),5000,'success');
 					saveVillageNames();
 				}else{
-					UI.InfoMessage('NĂˇzvy vesnic byly ĂşspÄ›ĹˇnÄ› zmÄ›nÄ›ny.',5000,'success');
+					UI.InfoMessage('Názvy vesnic byly úspěšně změněny.',5000,'success');
 				}
 			},
 			saveDelay
 		);
 	}else{
-		UI.InfoMessage('NĂˇzvy vesnic byly ĂşspÄ›ĹˇnÄ› zmÄ›nÄ›ny.',5000,'success');
+		UI.InfoMessage('Názvy vesnic byly úspěšně změněny.',5000,'success');
 	}
 }
 
@@ -667,5 +667,5 @@ function saveVillageNames(){
 		var canNameVillages = true; //hack for bug where renaming villages changes game_data.screen
 	}
 	else {
-		UI.InfoMessage('PouĹľijte v nĂˇhledu vesnic.',5000,'error');
+		UI.InfoMessage('Použijte v náhledu vesnic.',5000,'error');
 	}
