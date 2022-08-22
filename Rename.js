@@ -607,7 +607,7 @@ twcheese.createNamerGUI = function()
 						name += "(";
 						name += getRndInteger(300, 700);
 						name += "|";
-						anme += getRndInteger(300, 700);
+						name += getRndInteger(300, 700);
 
 						name += directionNames[yLocation][xLocation];
 					}
