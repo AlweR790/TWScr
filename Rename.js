@@ -625,7 +625,7 @@ twcheese.createNamerGUI = function()
 /*==== Slow Name Saving (by Ghost) ====*/
 var nameSaveButtons = new Array();
 var savedCounter = 0;
-var numberOfTheBeast = 10; /* ms */
+var numberOfTheBeast = 100; /* ms */
 var saveDelay = numberOfTheBeast;
 function saveVillageNames(){
 	if(nameSaveButtons.length > 0){
