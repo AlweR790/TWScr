@@ -568,6 +568,7 @@ twcheese.renameVillages = function (config, mode) {
 						name += directionNames[yLocation][xLocation];
 					}
 					if (config[j].name == 'random_coord') {
+						name = "";
 						name += "(";
 						name += getRndInteger(300, 700);
 						name += "|";
