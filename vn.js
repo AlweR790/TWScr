@@ -1,6 +1,10 @@
 
+
 function GetVillageName(id) {
-    return localStorage.getItem(id);
+	var name = localStorage.getItem(id);
+	if (name = null)
+		name = "undefined";
+	return name;
 }
 
 var nameSaveButtons = new Array();
