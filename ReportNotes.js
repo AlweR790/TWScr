@@ -17,7 +17,7 @@ var ScriptData = { name: "Auto notes from report", version: "v2.1", lastUpdate: 
             noteCreated: "Nota criada",
             addReportTo: "Colocar relatÃ³rio no:",
         },
-		cs_CZ: {
+	cs_CZ: {
             unknown: "Neznámý",
             verifyReportPage: "Script lze použít pouze z oznámení",
             offensive: "Ofensivní",
@@ -25,11 +25,11 @@ var ScriptData = { name: "Auto notes from report", version: "v2.1", lastUpdate: 
             probOffensive: "Pravděpodobně Ofensivní",
             probDefensive: "Pravděpodobně Defensivní",
             noSurvivors: "Žádné jednotky nepřežily",
-            watchtower: "Strážní věž",
-            wall: "Hradby",
+            watchtower: " Strážní věž ",
+            wall: " Hradby ",
             firstChurch: "Základní Kostel",
-            church: "Kostel",
-            defensiveNukes: "plných obrany",
+            church: " Kostel ",
+            defensiveNukes: " Selských dvorů obrany",
             noteCreated: "Poznámka přidána",
             addReportTo: "Přidat ke které vesnici:",
         },
@@ -279,7 +279,7 @@ var ScriptData = { name: "Auto notes from report", version: "v2.1", lastUpdate: 
                 });
         else {
             var t = $('<div class="center"> ' + _t("addReportTo") + " </div>"),
-                d = $('<div class="center"><button class="btn btn-confirm-yes atk">' + _("Atacante") + '</button><button class="btn btn-confirm-yes def">' + _("Defensor") + "</button></div>"),
+                d = $('<div class="center"><button class="btn btn-confirm-yes atk">' + _("Útočník") + '</button><button class="btn btn-confirm-yes def">' + _("Obránce") + "</button></div>"),
                 o = t.add(d);
             Dialog.show("relatorio_notas", o),
                 d.find("button.atk").click(function () {
